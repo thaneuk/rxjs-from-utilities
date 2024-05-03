@@ -11,7 +11,24 @@ fromElementResize(this.elementRef.nativeElement)
   .pipe(
     skip(1),
     debounceTime(50),
-    tap(() => {
+    tap((entries: ResizeObserverEntry[]) => {
+      /* do something */
+    }),
+    takeUntil(this.onDestroy$)
+  )
+  .subscribe();
+```
+
+# fromDomUpdate
+
+Monitor Dom updates on given element.
+
+## Example usage:
+
+```
+fromElementResize(this.elementRef.nativeElement, { attributes: false, childList: true, subtree: true })
+  .pipe(
+    tap((mutations: MutationRecord[]) => {
       /* do something */
     }),
     takeUntil(this.onDestroy$)
