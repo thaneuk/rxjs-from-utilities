@@ -19,14 +19,14 @@ fromElementResize(this.elementRef.nativeElement)
   .subscribe();
 ```
 
-# fromDomUpdate
+# fromDomMutation
 
 Monitor Dom updates on given element.
 
 ## Example usage:
 
 ```
-fromElementResize(this.elementRef.nativeElement, { attributes: false, childList: true, subtree: true })
+fromDomMutation(this.elementRef.nativeElement, { attributes: false, childList: true, subtree: true })
   .pipe(
     tap((mutations: MutationRecord[]) => {
       /* do something */
