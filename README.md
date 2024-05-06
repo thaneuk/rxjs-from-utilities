@@ -23,6 +23,8 @@ fromElementResize(this.elementRef.nativeElement)
 
 Monitor Dom updates on given element. Uses MutationObserver - https://developer.mozilla.org/en-US/docs/Web/API/MutationObserver
 
+Suggested use case in Angular would be within a Directive.
+
 ## Example usage:
 
 ```
